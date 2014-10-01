@@ -1,0 +1,4 @@
+<div style="text-align:left">
+	<img src="<?php echo asset('assets/img/logoblue.png'); ?>" width="100">
+</div>
+<div style="clear:both"></div>

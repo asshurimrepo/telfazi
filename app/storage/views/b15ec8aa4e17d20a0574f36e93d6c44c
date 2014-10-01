@@ -1,0 +1,70 @@
+
+
+<form action="<?php echo URL::to('video/save/'. $video->id); ?>" method="post" style="text-align:left">
+		<input type="hidden" name="video_id" value="<?php echo $video->id; ?>">
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Title</label>
+		    <div class="col-sm-10">
+		        <input type="text" class="form-control" name="title" value="<?php echo $video->title; ?>">
+		    </div>
+		    <div class="clearfix separator-space-sm"></div>
+		</div>
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Description</label>
+		    <div class="col-sm-10">
+		        <input type="text" class="form-control" name="description" value="<?php echo $video->description; ?>">
+		    </div>
+		    <div class="clearfix separator-space-sm"></div>
+		</div>
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Category</label>
+		    <div class="col-sm-10">
+		    	<?php $cats = array(); ?>
+		    	<?php foreach(Category::getAll(Session::get('lang_id')) as $cat): ?>
+                
+                <?php $cats[$cat->id] = $cat->name; ?>  
+
+            	<?php endforeach; ?>
+
+
+		    	<?php if($video->videocategory): ?> 
+		    		<?php echo Form::select('category', $cats, $video->videocategory->category->id ,array('class'=>"form-control")); ?><br>
+		    	<?php else: ?> 
+		    		<?php echo Form::select('category', $cats, '' ,array('class'=>"form-control")); ?><br>
+		    	<?php endif; ?>
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Duration</label>
+		    <div class="col-sm-10">
+		        <p class="form-control-static"><?php echo $video->getDuration(); ?></p>
+		    </div>
+		    <div class="clearfix separator-space-sm"></div>
+		</div>
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Size</label>
+		    <div class="col-sm-10">
+		       <p class="form-control-static"> <?php echo $video->size ? Util::formatBytes($video->size, 1) : ''; ?></p>
+		    </div>
+		    <div class="clearfix separator-space-sm"></div>
+		</div>
+
+		<div class="form-group">
+		    <label for="exampleInputEmail1" class="col-sm-2 ">Tags</label>
+		    <div class="col-sm-10">
+		    	
+		    	<?php echo $__env->make('components.tagging', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		    	
+		    </div>
+		    <div class="clearfix separator-space-sm"></div>
+		</div>
+		<div class="pull-right">
+			<input type="submit" name="submit" value="Save" class="btn btn-primary btn-sm " />
+		</div>
+	</form>
+

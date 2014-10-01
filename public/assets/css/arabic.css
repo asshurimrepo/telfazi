@@ -1,0 +1,32 @@
+body{ 
+	background-color: #000;
+	color: #3c3c3a !important;
+	font-family: "Arial",Helvetica,Arial,sans-serif !important;	
+}
+form {
+	direction: rtl;
+}
+.squad {
+	background-color: #000 !important;
+	background: url('../img/bgdark.png') repeat-x;
+
+}
+.squad .container { background-color: #fff; }
+
+.navbar { margin-bottom: 0 !important; }
+.bg-info { background-color: #222222 !important; }
+.vidThumb { text-align: right; }
+
+.video-detail { text-align: right; float:right;}
+.video-respo { float: left !important; margin: 0; }
+.video-respo ul { padding: 0; margin: 0;}
+.video-tab a:hover { color:#fff; }
+.video-tab .nav { float: right; clear: both; }
+.video-tab .description { text-align: right; clear: both; padding-top: 10px; }
+.foot { text-align: right; }
+.activity-feed { direction: rtl; }
+.postbtn { float:left;}
+.browse-box { text-align: right;}
+.meta .head { text-align: right; }
+.video-desc { direction: rtl; }
+.video-like { padding-left: 20px; }

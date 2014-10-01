@@ -1,0 +1,29 @@
+<?php $__env->startSection('content'); ?>
+	<?php 
+
+	$cats = array();
+	foreach($categories as $c){
+		$cats[$c->id] = $c->category_name;
+	}
+
+	?>
+
+	<div class="row">
+		<div class="col-md-12"> 
+			<center>
+				<?php echo $__env->make('video.videoplayer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</center>
+		</div>
+	</div>
+	<div class="separator-space-sm"></div>
+
+	<div class="row">
+		<div class="col-md-12">
+			
+			<?php echo $__env->make('video.detail.editform', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

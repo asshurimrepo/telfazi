@@ -1,0 +1,5 @@
+<?php if($type == 'error'): ?>
+<div class="alert alert-danger" role="alert" id="error-message">
+    <b> <?php echo $message; ?></b>
+</div>
+<?php endif; ?>

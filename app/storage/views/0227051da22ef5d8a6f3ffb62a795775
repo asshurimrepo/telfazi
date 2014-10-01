@@ -1,0 +1,67 @@
+<div id="carousel-livestream" class="carousel slide feeder-carousel" data-ride="carousel" data-interval="false">
+  <div class="carousel-inner nopadd">
+
+<div class="nopadd">
+  <h2 class="featTitle"><a href="<?php echo url('live'); ?>"><span>Live</span> Stream</a></h2>
+</div>
+
+<?php 
+  $max = 9; $counter = 0; $iterator = 0; 
+?>
+<?php if( $videos->count() > 0): ?>
+  <?php foreach( $videos as $i=>$v ): ?>
+    <?php if($i%$max == 0): ?>
+      <div class="item <?php echo $i == 0 ? 'active' : ''; ?>">
+        
+      <?php $counter = 0; $iterator = 0;  ?>
+    <?php endif; ?>
+
+    
+    <?php $min = 4; ?>
+    <?php if( $counter < $min ): ?>
+      <?php if($counter%$max == 0): ?>
+        <div class="lstream-box1 boxy">
+      <?php endif; ?>
+
+        <?php echo $__env->make('layouts.home.carousel.vidsmall', array('v'=>$v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+      <?php if($counter%$min == $min-1 || ($counter+1 == $min)): ?>
+        </div>
+      <?php endif; ?>
+    <?php else: ?>
+      <?php $mil = 5; ?>
+      <?php if($iterator%$mil == 0): ?>
+        <div class="boxy">
+      <?php endif; ?>
+
+        <?php if($iterator == 0): ?>
+          <?php echo $__env->make('layouts.home.carousel.vidBig', array('v'=>$v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php else: ?>
+          <?php echo $__env->make('layouts.home.carousel.vidsmall', array('v'=>$v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endif; ?> 
+
+      
+
+      <?php if($iterator%$mil == $mil-1 || ($iterator+1 == $mil)): ?>
+        </div>
+      <?php endif; ?>
+
+      <?php $iterator++; ?>
+    <?php endif; ?>
+
+
+
+
+    <?php $counter++;?>
+    <?php if($i%$max == $max-1 || ($i+1 == $videos->count())): ?>
+
+      </div>
+    <?php endif; ?>  
+  <?php endforeach; ?>
+<?php endif; ?>
+
+
+                 
+  </div><!-- end carousel inner -->
+  
+</div>

@@ -1,0 +1,22 @@
+<div class="row recommended ">
+	<div id="categories">
+	<?php foreach( $channels as $c ): ?>
+	<div class="col-md-2 col-xs-12 col-sm-6 entity">
+		<figure>
+			<div class="vidThumb ">
+				<div style="background: url(<?php echo $c->getThumbnail(); ?>) no-repeat center; 
+				background-size:cover;">
+				    <a href="<?php echo URL::to('channel/'.$c->id); ?>">
+				        <img src="<?php echo asset('assets/img/vidspaces.png'); ?>">
+				    </a>
+				</div>
+				<div class="separator-space-xsm"></div>
+				<div class="text-left">
+					<span class="burb"><a href="<?php echo URL::to('channel/'.$c->id); ?>"><?php echo $c->channelName(); ?></a></span>
+				</div>
+			</div>
+		</figure>
+		</div> 
+	<?php endforeach; ?>
+	</div>
+</div>

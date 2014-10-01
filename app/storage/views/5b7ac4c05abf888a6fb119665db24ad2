@@ -1,0 +1,20 @@
+<?php if( count($videos) > 0): ?>
+    <div id="browse_vids">
+        <div class="row vidlist">
+
+    <?php foreach( $videos as $i => $v ): ?>
+
+        <?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php if( isset( $url_to_scroll) ): ?>
+        <a href="<?php echo url( $url_to_scroll ); ?>"></a>
+    <?php endif; ?>
+<?php else: ?>
+    <div class="alert alert-danger" role="alert" id="error-message">
+        <b>Sorry! No videos found. </b>
+    </div>
+<?php endif; ?>

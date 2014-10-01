@@ -1,0 +1,37 @@
+<?php
+//initial values
+if(!isset($slug))
+	$slug = 'category';
+if(!isset($url))
+	$url = 'browsevids';
+
+?>
+
+<?php foreach( $categories = Category::getAll(Session::get('lang_id')) as $i => $c ): ?>
+	  <?php
+	    $half = ceil(count($categories) / 2);
+	    $icon = array_key_exists ( $i , $catIcons ) ? $catIcons[$i] : '';
+	  ?>
+		<?php if(Session::get('lang') == 'ar'): ?>
+
+			<li class="pull-right">
+				<a href="<?php echo url('browsevids', array($slug, $c->id)); ?>">
+			      <span>(<?php echo $c->videos->count(); ?>)</span>
+			      <?php echo $c->title; ?>
+
+			      <i class="<?php echo $icon; ?>"></i></a>
+		    </li>
+
+		<?php else: ?>
+
+			<li>
+				<a href="<?php echo url( $url , array($slug, $c->id)); ?>">
+			      <i class="<?php echo $icon; ?>"></i>
+			      <?php echo $c->title; ?>
+
+			      <span>(<?php echo $c->videos->count(); ?>)</span></a>
+		    </li>
+
+		<?php endif; ?>
+
+<?php endforeach; ?>

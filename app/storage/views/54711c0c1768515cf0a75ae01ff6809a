@@ -1,0 +1,62 @@
+<?php
+$activeAt = array('','','');
+$stack = array('category', 'popular', 'newest');
+
+$key = array_search( $slug, $stack);
+$activeAt[$key] = 'active'; ?>
+
+<div class="separator-space"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <ul class="list-unstyled list-inline browselist" style="margin-top:5px;">
+                <?php if( $is_category ): ?>
+                    <?php $this_url = route('browse_videos_page', ['category', $category_id]); ?>
+                <?php else: ?>
+                    <?php $this_url = route('browse_videos_page'); ?>
+                <?php endif; ?>
+                <li><a href="<?php echo $this_url; ?>" class="<?php echo $activeAt[0]; ?>">
+                    <?php echo Lang::get('lang.all_videos'); ?>
+
+                </a></li>
+                <li>|</li>
+                <li><a href="<?php echo route('browse_videos_page', ['popular', $category_id] ); ?>" class="<?php echo $activeAt[1]; ?>">
+                    <?php echo Lang::get('lang.most_popular'); ?>
+
+                </a></li>
+                <li>|</li>
+                <li><a href="<?php echo route('browse_videos_page', ['newest', $category_id] ); ?>" class="<?php echo $activeAt[2]; ?>">
+                    <?php echo Lang::get('lang.newest'); ?>
+
+                </a></li>
+            </ul>
+        </div>
+
+        <div class="pull-right">
+            <span class="feeder-header" style="text-transform: capitalize;"><b>Category</b></span>
+
+            <?php echo $__env->make('layouts.home.categorydd', [
+                'dropdown_class'=> 'pull-right',
+                'type'=> 'videos',
+                'url' => 'browsevids',
+                'target' => $url_segments
+            ], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        </div>
+    </div>
+</div>
+
+<div class="separator-space-sm"></div>
+
+<?php /* jscroll div */ ?>
+<div class="browse-scroll">
+
+    <?php echo $__env->make('components.videos.browse.collection', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+</div>
+<script>
+$(function(){
+    $('.browse-scroll').jscroll();
+});
+</script>

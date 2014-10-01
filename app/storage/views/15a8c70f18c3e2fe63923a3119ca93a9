@@ -1,0 +1,44 @@
+<?php $__env->startSection('content'); ?>
+    <div id="playerrxwtYJnCGzFb">
+           Please <a href="http://get.adobe.com/flashplayer/" >install flash</a> to watch the video or download it from <a href="<?php echo $video->getVideoURL(); ?>">here</a>
+
+    </div>
+
+    <script>
+    $(function(){
+        var base_domain = "<?php echo URL::to('/'); ?>";
+        var mobile_video_url = '<?php echo $video->getMobileURL(); ?>';
+        var video_url = "<?php echo $video->getVideoURL(); ?>";
+        var video_thumbnail = "<?php echo $video->getThumbnail(); ?>";
+
+        jwplayer('playerrxwtYJnCGzFb').setup({
+        		file: video_url,
+                image: video_thumbnail,
+        		autostart:true,
+        		ga: {},
+        		fallback: false,
+        		width: '100%',
+        		height: "550",
+        		primary: 'flash',
+        		stretching: 'exactfit',
+        		logo: {
+        			file: '<?php echo asset("assets/img/vidorabia-text.png"); ?>',
+        			position: 'bottom-right',
+        			margin: '12'
+        			//link: 'http://example.com'
+        	    },
+        		advertising: {
+        		client: 'vast',
+        		tag: 'http://www.adotube.com/kernel/vast/vast.php?omlSource=http://www.adotube.com/php/services/player/OMLService.php?avpid=i24YhWD&ad_type=pre-rolls&vpaid=1&rtb=0&platform_version=vast20as3&publisher=www.telfazi.com&title='+"<?php echo $video->title; ?>"+'&description=[VIDEO_DESCRIPTION]&videoURL&http_ref='+video_url,
+        		skipoffset: '2'
+        		}
+        	});
+    });
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+    <script type='text/javascript' src="<?php echo asset('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo asset('iboostme/js/loaders/partialLoader.js'); ?>" type='text/javascript'></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

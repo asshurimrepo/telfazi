@@ -1,0 +1,128 @@
+<?php echo $__env->make('scripts.fblogin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('layouts.home.socialbtns', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="row">
+	<div class="col-md-8">
+		<div class="alpha-header">
+			<h3><b><?php echo $video->sub_name; ?></b></h3>
+			<h4><?php echo $video->getStreamCategory()->title; ?></h4>
+		</div>
+		<?php if($video->embed): ?>
+			<?php echo $video->embed; ?>
+
+		<?php else: ?>
+			<?php if($video->getStreamCategory()->slug == 'music'): ?> 
+			<div id="player">
+				<!-- VIDEO PLAYER GOES HERE -->
+
+				<script type="text/javascript">
+		
+					jwplayer('player').setup({
+						playlist: '<?php echo $video->video_url; ?>',
+					    width: '100%',
+						height: "550",
+					});
+				
+				</script>
+			</div>
+			<?php else: ?> 
+			<div id="player">
+				<!-- VIDEO PLAYER GOES HERE -->
+
+				<script type="text/javascript">
+		
+					jwplayer('player').setup({
+						file: '<?php echo $video->video_url; ?>',
+					    width: '100%',
+						height: "550",
+					});
+				
+				</script>
+			</div>
+			<?php endif; ?> 
+		<?php endif; ?>
+
+		
+
+		<div class="separator-space-sm"></div>
+		
+		<?php echo $__env->make('layouts.frag.feeder_descriptionbox', array('video' => $video), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<!-- Facebook Feed -->
+
+		 <?php echo $__env->make('scripts.facebookfeed', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		
+
+		<!-- Facebook Feed -->
+
+	</div>
+	<div class="col-md-4">
+		
+		<?php echo $__env->make('components.mpu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="separator-space-sm"></div>
+
+		<div class="">
+			<div class="bg-info info-head" style="">
+				<i class="fa fa-twitter-square"></i> Twitter Feeds
+			</div>
+			
+			<div class="info-space twitter-space">
+				
+				 <?php echo $__env->make('scripts.twitterfeed', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+
+	
+			</div>
+		</div>
+
+		
+	</div>
+</div>
+
+<div class="separator-space"></div>
+
+
+<div class="row">
+	<div class="col-md-12">
+	
+		<!-- Nav tabs -->
+		<ul class="list-unstyled list-inline bottomhead" role="tablist">
+		  <li class="active"><a href="#streams" role="tab" data-toggle="tab"><?php echo Lang::get('lang.other_live_streams'); ?></a></li>
+		</ul>
+
+		<?php echo $__env->make('layouts.frag.feeder_stream', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+</div>
+
+<?php echo $__env->make('layouts.others.loginmodal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	    $("#owl-demo").owlCarousel({
+	       
+	        pagination: true
+	    });
+	});
+</script>
+
+<style type="text/css">
+#owl-demo .owl-item > div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom:8px;
+}
+#owl-demo .owl-item > div {
+    padding: 0px 4px
+}
+</style>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

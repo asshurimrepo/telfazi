@@ -1,0 +1,46 @@
+
+
+<?php $__env->startSection('head'); ?>
+<style type="text/css">
+body, a { color: #fff !important; }
+.feeder-header b { color: #fff; }
+.squad .container{ background: none !important; }
+.squad .container{ background: none !important; }
+.container-fluid { background: none !important; }
+
+.browselist {  font-size: 16px; }
+.browselist li a { color: #333; }
+.browselist li a:hover { text-decoration: none; }
+.browselist li .active { font-weight: bold;  }
+</style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<style type="text/css">
+
+</style>
+
+<?php
+
+$activeAt = array('','','');
+$stack = array('browse', 'browse/popular', 'browse/newest');
+$key = array_search( Request::path(), $stack);
+
+$activeAt[$key] = 'active';
+
+?>
+
+
+<?php echo $__env->make('video.browse_feature', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<div class="separator-space"></div>
+
+<?php echo $__env->make('layouts.home.videos', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

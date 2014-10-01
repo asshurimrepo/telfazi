@@ -1,0 +1,54 @@
+
+<?php if( $feeds->count() > 0): ?>
+	<?php foreach( $feeds as $feed): ?>
+		<?php
+			$username		= $feed->user->username;	
+		?>
+		<div class="row activity-feed">
+
+			<?php if(Session::get('lang') == 'ar'): ?>
+				<div class="separator-space"></div>
+				<div class="col-md-11 ">
+
+					<?php echo $__env->make('user.feed.each', array( 'feed' => $feed ), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				</div>
+				<div class="col-md-1">
+					<div class="vidThumb ">
+	                    <div class="uicon" style="background: url(<?php echo $user->getThumbnail(); ?>) no-repeat center; 
+	                    background-size:cover; width:39px; height:39px;">
+	                        <a href="#">
+	                            <img src="<?php echo asset('assets/img/profile_cover.png'); ?>">
+	                        </a>
+	                    </div>
+	                </div>
+				</div>
+			<?php else: ?> 
+				<div class="col-md-1">
+					<div class="vidThumb ">
+	                    <div class="uicon" style="background: url(<?php echo $user->getThumbnail(); ?>) no-repeat center; 
+	                    background-size:cover; width:39px; height:39px;">
+	                        <a href="#">
+	                            <img src="<?php echo asset('assets/img/profile_cover.png'); ?>">
+	                        </a>
+	                    </div>
+	                </div>
+				</div>
+				<div class="col-md-11 ">
+
+					<?php echo $__env->make('user.feed.each', array( 'feed' => $feed ), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				</div>
+			<?php endif; ?>
+			
+		</div>
+		<div class="separator-line"></div> 
+
+	<?php endforeach; ?>
+
+<?php else: ?>
+	<div class="alert alert-warning">
+		<b> <i class="glyphicon glyphicon-warning-sign"></i> No activity feeds available </b> 
+	</div>
+<?php endif; ?>
+

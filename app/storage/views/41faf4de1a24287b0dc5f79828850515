@@ -1,0 +1,114 @@
+<?php echo $__env->make('scripts.fblogin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->startSection('meta'); ?>
+    <meta property="og:title" content="<?php echo $video->getTitle(); ?>" />
+    <meta property="og:description" content="<?php echo $video->getDescription(); ?>" />
+    <meta property="og:image" content="<?php echo $video->getThumbnail(); ?>" />
+    <meta property="og:video" content=<?php echo $video->gotoUrl(); ?> />
+    <meta property="og:video:width" content="560" />
+    <meta property="og:video:height" content="340" />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+<?php $__env->stopSection(); ?>
+
+<?php
+    $singleTag = '';
+    if( count($video->tags) > 0){
+        $singleTag = $video->tags()->first()->name;
+    } ?>
+
+<?php $__env->startSection('content'); ?>
+<div style="max-width: 1260px; margin: 0 auto;">
+
+    <?php echo $__env->make('layouts.home.socialbtns', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alpha-header">
+                <h3><b><?php echo $video->getTitle(); ?></b></h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <?php echo $__env->make('components.socials.socials_vertical', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <?php echo $__env->make('video.videoplayer', array('video' => $video), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <div class="clearfix separator-space-sm"></div>
+
+            <?php echo $__env->make('layouts.frag.feeder_descriptionbox', array('video' => $video), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php /* Go to www.addthis.com/dashboard to customize your tools */ ?>
+            <div class="addthis_sharing_toolbox" data-image=<?php echo $video->getThumbnail(); ?>></div>
+            <div class="separator-space-sm"></div>
+
+            <!-- Video Comment Box -->
+            <?php echo $__env->make('layouts.frag.feeder_commentbox', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+            <?php /* Video Tags*/ ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="whitelabel">Other videos you may like</div>
+                    <form action="#">
+                        <input type="hidden" id="set_video_id" data-value="<?php echo $video->id; ?>">
+                    </form>
+                    <div class="video-tags">
+                        <?php /* html here */ ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <?php echo $__env->make('components.mpu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+            <div class="separator-space-sm"></div>
+
+            <div class="">
+                <div class="bg-info info-head" style="">
+                    <i class="fa fa-youtube-play"></i> Related
+                </div>
+                <div class="separator-space-sm"></div>
+
+                <div id="relatedcon">
+                    <div class="text-center">
+                        <span class="livicon " data-name="spinner-four" data-l="true" style="color:#fff"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="separator-space"></div>
+</div>
+
+
+
+
+<?php echo $__env->make('layouts.others.loginmodal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url : '<?php echo url("relatedvids/".$video->id); ?>',
+            success : function( html ){
+
+                $('#relatedcon').html(html);
+            }
+        });
+    });
+</script>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

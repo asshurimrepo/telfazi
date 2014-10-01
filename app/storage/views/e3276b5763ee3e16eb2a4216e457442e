@@ -1,0 +1,37 @@
+<?php $__env->startSection('head'); ?>
+    <style type="text/css">
+    .squad .container{ background: none !important; }
+    .container-fluid { background: none !important; }
+    </style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('layouts.home.socialbtns', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="nopadd">
+      <h2 class="featTitle"><a href="<?php echo url('/'); ?>">
+        Featured Videos</a>
+      </h2>
+    </div>
+    <div class="separator-space" style="margin-bottom: 80px;">
+        <div class="parial-loader" data-url="<?php echo route('video_feature_partial'); ?>" data-partial="data-partial"></div>
+    </div>
+
+    
+    <div class="separator-space">
+        <div class="parial-loader" data-url="<?php echo route('video_livestream_partial'); ?>" data-partial="data-partial"></div>
+    </div>
+
+    <?php foreach(Category::getAll( Session::get('lang_id') ) as $category): ?>
+    <div class="separator-space">
+        <div class="parial-loader" data-url="<?php echo route('video_category_partial', [ 'cat_id' => $category->id ]); ?>" data-partial="data-partial"></div>
+    </div>
+    <?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

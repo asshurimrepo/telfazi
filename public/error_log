@@ -1,0 +1,143 @@
+[09-May-2014 10:22:28 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/emman/public_html/telfasi/vendor/way/generators/src/Way/Generators/GeneratorsServiceProvider.php on line 38
+[09-May-2014 10:24:50 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/emman/public_html/telfasi/vendor/way/generators/src/Way/Generators/GeneratorsServiceProvider.php on line 38
+[09-May-2014 14:39:52 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/emman/public_html/telfasi/vendor/way/generators/src/Way/Generators/GeneratorsServiceProvider.php on line 38
+[11-May-2014 09:26:12 UTC] PHP Fatal error:  Class 'Way\Generators\GeneratorsServiceProvider' not found in /home/emman/public_html/telfasi/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 158
+[11-May-2014 09:37:26 UTC] PHP Fatal error:  Class 'Way\Generators\GeneratorsServiceProvider' not found in /home/emman/public_html/telfasi/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 158
+[11-May-2014 11:02:50 UTC] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home/emman/public_html/telfasi/app/config/database.php on line 59
+[11-May-2014 14:03:43 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/emman/public_html/telfasi/app/storage/views/796cb7fbe3832871cafeaa5049d113b7 on line 142
+[12-May-2014 13:50:29 UTC] PHP Fatal error:  Class 'Way\Generators\GeneratorsServiceProvider' not found in /home/emman/public_html/telfasi/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 158
+[12-May-2014 13:51:12 UTC] PHP Fatal error:  Class 'Way\Generators\GeneratorsServiceProvider' not found in /home/emman/public_html/telfasi/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 158
+[12-May-2014 14:20:51 UTC] PHP Parse error:  syntax error, unexpected '[' in /home/emman/public_html/telfasi/app/controllers/VideoController.php on line 54
+[12-May-2014 14:24:43 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/emman/public_html/telfasi/app/storage/views/796cb7fbe3832871cafeaa5049d113b7 on line 134
+[12-May-2014 14:28:14 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home/emman/public_html/telfasi/app/storage/views/796cb7fbe3832871cafeaa5049d113b7 on line 134
+[16-May-2014 00:52:58 UTC] PHP Fatal error:  Class 'UtiL' not found in /home/emman/public_html/telfasi/app/controllers/FrontendController.php on line 40
+[16-May-2014 01:11:10 UTC] PHP Fatal error:  Class 'UtiL' not found in /home/emman/public_html/telfasi/app/controllers/VideoController.php on line 47
+[02-Sep-2014 05:21:39 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:41 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:43 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:45 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:48 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:49 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 05:21:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:25 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:27 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:29 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:31 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:33 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:35 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:43 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:44 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:47 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:49 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:08:57 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:26 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:28 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:30 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:32 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:34 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:36 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[02-Sep-2014 07:10:38 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:44:58 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:00 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:02 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:04 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:06 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:08 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:10 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:12 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:14 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[04-Sep-2014 08:45:16 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[05-Sep-2014 05:28:12 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[05-Sep-2014 05:28:13 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[05-Sep-2014 05:28:15 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:24:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:24:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:24:57 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:25:00 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:25:12 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 05:25:15 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:12:07 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:40:46 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:40:48 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:40:50 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:40:52 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:00 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:02 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:04 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:06 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:17 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:20 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[22-Sep-2014 13:41:21 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:46 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:48 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:52 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:57 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:33:59 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:00 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:03 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:04 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:07 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:08 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:11 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:12 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:15 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:16 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:19 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:20 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:23 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:24 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:27 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:28 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:31 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:32 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:35 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:36 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:39 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:40 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:43 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:44 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:47 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:48 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:56 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:34:59 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:35:02 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:35:04 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 10:35:05 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 11:59:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 12:01:07 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 12:01:10 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 12:01:12 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 12:01:14 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[23-Sep-2014 12:01:15 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[28-Sep-2014 12:42:07 UTC] PHP Fatal error:  Class 'Aws\S3\S3Client' not found in /home/bords/public_html/telfazi/app/libraries/VideoObject.php on line 56
+[28-Sep-2014 12:43:51 UTC] PHP Fatal error:  Class 'Aws\S3\S3Client' not found in /home/bords/public_html/telfazi/app/libraries/VideoObject.php on line 56
+[28-Sep-2014 12:47:51 UTC] PHP Fatal error:  Class 'Aws\S3\S3Client' not found in /home/bords/public_html/telfazi/app/libraries/VideoObject.php on line 56
+[28-Sep-2014 13:07:36 UTC] PHP Fatal error:  Class 'Aws\S3\S3Client' not found in /home/bords/public_html/telfazi/app/libraries/VideoObject.php on line 56
+[28-Sep-2014 08:14:22 America/Chicago] PHP Warning:  require(/home/bords/public_html/telfazi/vendor/swiftmailer/swiftmailer/lib/swift_required.php): failed to open stream: No such file or directory in /home/bords/public_html/telfazi/vendor/composer/autoload_real.php on line 58
+[28-Sep-2014 08:14:22 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/bords/public_html/telfazi/vendor/swiftmailer/swiftmailer/lib/swift_required.php' (include_path='/home/bords/public_html/telfazi/vendor/phpseclib/phpseclib/phpseclib:.:/opt/php54/lib/php') in /home/bords/public_html/telfazi/vendor/composer/autoload_real.php on line 58
+[30-Sep-2014 06:15:39 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:15:42 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:15:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:45 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:47 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:49 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:51 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:53 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:55 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:57 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:39:59 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:40:01 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:40:03 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:40:05 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:40:07 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92
+[30-Sep-2014 06:40:09 UTC] PHP Fatal error:  Call to a member function likes() on a non-object in /home/bords/public_html/telfazi/app/controllers/RequestController.php on line 92

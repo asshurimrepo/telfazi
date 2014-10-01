@@ -1,0 +1,38 @@
+<?php if( count( $subscriptions ) > 0 ): ?>
+	<table class="table table-striped" id="vidtable">
+		<tbody>
+			<?php foreach( $subscriptions as $s ): ?>
+
+				<tr>
+				<td style="width:60%">
+					<a href="#">
+						<img src="<?php echo $s->userChannel->getThumbnail(); ?>" class="pull-left" width="211" height="118" style="margin-right:5px">
+					</a>
+
+					<span class="burb-sm">
+						<a href="<?php echo url('channel/'.$s->userChannel->channel_id); ?>">
+							<?php echo $s->userChannel->channelName(); ?>
+
+			        	</a>
+			    	</span>
+					
+				</td>
+
+				<?php if($isViewing == false): ?>
+				<td>
+					<div class="btn-group pull-right">
+					  	<form action="<?php echo URL::to('mytv/subscriptions'); ?>" method="post">
+					  		<input type="hidden" name="subscription" value="<?php echo $s->id; ?>"> 
+					  		<button type="submit" title="" class="btn btn-default tips btn-sm btn-dislike" id="" data-original-title="Dislike">
+								<b>unsubscribe</b> 
+							</button>
+					  	</form>
+					</div>
+				</td>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+<?php else: ?>
+	<div class="alert alert-warning"><b> <i class="glyphicon glyphicon-warning-sign"></i> No Subscriptions Found. </b></div>
+<?php endif; ?>

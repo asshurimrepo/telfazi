@@ -1,0 +1,38 @@
+<?php $__env->startSection('head'); ?>
+<style type="text/css">
+body, a { color: #fff !important; }
+.feeder-header b { color: #fff; }
+.squad .container{ background: none !important; }
+.squad .container{ background: none !important; }
+.container-fluid { background: none !important; }
+
+.browselist {  font-size: 16px; }
+.browselist li a { color: #333; }
+.browselist li a:hover { text-decoration: none; }
+.browselist li .active { font-weight: bold; background: #012237; padding: 8px 20px; }
+</style>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div style="max-width: 1260px; margin: 0 auto;">
+        <?php /* jscroll div */ ?>
+        <div class="browse-scrolsl">
+
+            <?php echo $__env->make('components.videos.browse.collection', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        </div>
+        <script>
+            $(function(){
+                $('.browse-scroll').jscroll();
+            });
+        </script>
+</div>
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

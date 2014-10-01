@@ -1,0 +1,10 @@
+<?php $__env->startSection('content'); ?>
+
+<div id="videoliked">
+	<?php echo $__env->make('video.lists.videosliked', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+</div>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alphaprofile', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

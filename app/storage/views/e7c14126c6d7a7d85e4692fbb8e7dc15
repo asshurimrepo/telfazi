@@ -1,0 +1,46 @@
+<?php echo $__env->make('layouts.others.header', array('fixed_top' => true), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<style type="text/css">
+.header-menu .feat:hover { color:#fff !important; background: none; }
+.header-menu .feat:hover, .header-menu .active {
+  color:#fff !important; 
+  -webkit-box-shadow: none;
+  -moz-box-shadow:    none;
+  box-shadow:         none;
+  background: none;
+}
+</style>
+
+<div class="squad">
+	<div class="container-fluid profile-fluid">
+		
+		
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar nopadd">
+				<?php echo $__env->make('user.components.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	        </div>
+
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<?php echo $__env->make('components.validate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				<div style="margin-top:50px;"></div>
+				
+				<?php echo $__env->make('user.components.profilestats', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				<div class="separator-space-sm"></div>
+
+				<?php echo $__env->yieldContent('content'); ?>
+
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+
+</style>
+<?php echo $__env->make('layouts.others.footer', array('enable_footer' => false), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+
+

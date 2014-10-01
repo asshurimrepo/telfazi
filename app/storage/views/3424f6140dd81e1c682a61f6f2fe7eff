@@ -1,0 +1,96 @@
+<?php 
+
+	// Default Page 
+	$show_per_load = 18;
+	$count = count($feed);
+	$total = ceil($count/$show_per_load);
+	$gr_name = isset($gr_name) ? $gr_name : 'gr';
+
+	// echo $total;
+
+?>
+
+<?php if( count( $feed ) > 0 ): ?>
+	<div class="row" style="padding:0 12px;">
+	<?php $i = 0; ?>
+	<?php foreach($feed as $j=>$v): ?>
+	    <?php if($i%2 == 0): ?> 
+			<div class="col-md-12"></div>
+	    <?php endif; ?>
+
+	    <?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v, 
+	    	'column_class' => 'col-md-6 '. $gr_name.'_'.ceil(($i+1)/$show_per_load).' hide'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	     <!-- <div class="col-md-6 col-xs-6 <?php echo $gr_name; ?>_<?php echo ceil(($i+1)/$show_per_load); ?> hide">
+			<div class="vidThumb">
+				<div style="background: url(<?php echo $v->getThumbnail(); ?>) no-repeat center; 
+					background-size:cover;">
+					<a href="<?php echo URL::to('watch/'.$v->id); ?>">
+					  <img src="<?php echo asset('assets/img/whitespace.png'); ?>" class="hover playarrow-ver ">
+					</a>
+				</div>
+				
+				<span class="burb"><a href="<?php echo URL::to('watch/'.$v->id); ?>" title="<?php echo $v->title; ?>">
+					<?php echo $v->getTitle(25); ?></a></span>
+				<span class="date"><?php echo date('F d Y', strtotime($v->getCreatedAt())); ?></span>  
+				<span class="views"><em><?php echo $v->getViews(); ?></em> <?php echo Lang::get('lang.views'); ?></span>
+			</div> 
+		</div> -->
+
+		<?php $i++; ?>
+	<?php endforeach; ?>
+
+	</div>
+
+	<?php if($count > $show_per_load): ?>
+	 <div class="row">
+	 	 <div class="col-md-9 col-md-offset-2">
+	 	 	<button type="button" id="<?php echo $gr_name; ?>_load-more" data-loading-text="Fetching..." class="btn btn-block btn-primary">
+	  			<?php echo Lang::get('lang.show_more'); ?>
+
+		  </button>
+	 	 </div>
+	 </div>
+
+	<?php endif; ?>	
+
+<?php else: ?>
+<div class="text-center"> 
+	<em>No Related Videos</em>
+	<div class="separator-space-sm"></div>
+</div>
+<?php endif; ?> 
+
+
+<script type='text/javascript'>
+
+	
+
+
+	var <?php echo $gr_name; ?>_max_load = <?php echo $total; ?>;
+	var <?php echo $gr_name; ?>_default_load = 1;
+
+	$(document).ready(function(){
+
+		$(".<?php echo $gr_name; ?>_1").removeClass('hide');
+
+		$('#<?php echo $gr_name; ?>_load-more').click(function () {
+    		var btn = $(this);
+		    btn.button('loading');
+
+		    setTimeout(function(){
+		    	<?php echo $gr_name; ?>_default_load++;
+		    	btn.button('reset');
+
+				$(".<?php echo $gr_name; ?>_"+<?php echo $gr_name; ?>_default_load).removeClass('hide').hide().show('fast');
+
+
+		    	if(<?php echo $gr_name; ?>_default_load >= <?php echo $gr_name; ?>_max_load) btn.fadeOut('fast');
+
+
+		    }, 700);
+		});
+
+	});
+
+</script>

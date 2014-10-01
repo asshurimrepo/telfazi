@@ -1,0 +1,21 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row vidlist">
+               
+  <?php if(count($subscriptions) > 0 ): ?>
+    <?php foreach( $subscriptions as $s ): ?>
+    	<?php if($s->userChannel): ?>
+    		<?php $c = $s->userChannel ?>
+      		<?php echo $__env->make('layouts.home.carousel.chansmall', array('c' => $c, 'enable_unsubscribe' => true), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    	<?php endif; ?>
+    <?php endforeach; ?>
+  <?php endif; ?>
+  
+</div>
+
+<?php /* <?php echo $__env->make('channel.lists.subscriptions', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	*/ ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alphaprofile', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

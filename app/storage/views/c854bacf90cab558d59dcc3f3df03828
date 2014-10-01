@@ -1,0 +1,41 @@
+<div class="list-group">
+<?php foreach( $playlists as $play): ?>
+	<?php
+
+	$active = ''; $disable = "novalue";
+	if($video->id == $play->video_id){
+		$active = "active";
+		$disable = "disabled";
+	}
+	?>
+	<a href="#" class="list-group-item addto <?php echo $active; ?>" data="<?php echo $play->id; ?>" 
+		id="<?php echo $play->playlist_name; ?>" response="<?php echo $disable; ?>">
+	    <?php echo $play->playlist_name; ?><span class="badge badge_<?php echo $play->id; ?>"> <?php echo $play->count; ?> </span>
+  	</a>
+<?php endforeach; ?>
+</div>
+
+<script type="text/javascript">
+//Add to Tab
+	$('.addto').click(function(e){
+		e.preventDefault();
+
+		var plistName = this.id;
+		var plistID = $(this).attr("data");
+		var videoID = "<?php echo $video->id; ?>";
+		var channelID = "<?php echo $video->channel->channel_id; ?>";
+		var disabled =  $(this).attr("response");
+
+
+		if(disabled != 'disabled'){
+			$.ajax({
+				url: "<?php echo URL::to('addto'); ?>",
+				data: { playlist_id: plistID, channel_id: channelID, video_id: videoID  }
+			}).done(function( response ){
+				
+				//Add to Tab
+				$('#playlist').load("<?php echo URL::to('addToList'); ?>", { video_id: "<?php echo $video->id; ?>"},  function(){});
+			});
+		}
+	});
+</script>

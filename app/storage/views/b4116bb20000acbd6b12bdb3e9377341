@@ -1,0 +1,57 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+	<div class="col-md-12"> 
+		<div class="pull-left">
+		<span class="feeder-header "><b><?php echo Lang::get('lang.filter_by'); ?></b> </span> 	
+			
+			<?php echo $__env->make('layouts.home.categorydd', [
+			'type'=>'channels'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		
+		</div>
+
+		<div class="pull-right vertical-top" style="margin-top: 5px">
+			<span class="feeder-header"><b><?php echo ucfirst($filter); ?></b></span>
+		</div>
+	</div>
+</div>
+<div class="separator-space-sm"></div>
+
+
+<div class="row vidlist">
+              
+  <?php if(count($channels) > 0 ): ?>
+    <?php foreach( $channels as $c ): ?>
+      
+      <?php echo $__env->make('layouts.home.carousel.chansmall', array('c' => $c, 'enable_subscription' => true), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+    <?php endforeach; ?>
+  <?php endif; ?>
+  
+</div>
+
+
+<?php /* <?php echo $__env->make('channel.lists.channels', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> */ ?>
+
+<script type="text/javascript">
+$('.n_subscribe').click(function(e){
+    e.preventDefault();
+    var subscribeTo = this.id;
+
+    $.ajax({
+      url: "<?php echo URL::to('channel/subsTo'); ?>",
+      type: 'post',
+      data: { subscribeTo: subscribeTo}
+    }).done(function( data ){
+      
+      console.log(data);
+
+
+      var url = '<?php echo URL::to("channel/'+data.subscribeTo+'/subscribe"); ?>';
+
+      $('.subscribe#'+data.subscribeTo).load(url);
+
+    });
+});
+</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

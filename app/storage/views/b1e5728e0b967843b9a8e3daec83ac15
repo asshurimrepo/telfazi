@@ -1,0 +1,14 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="separator-space"></div>
+
+<?php if($videos->count() > 0): ?>
+<div class="alert alert-danger" role="alert">
+    <b>Search result found <?php echo $videos->count(); ?> videos </b>
+</div>
+<?php endif; ?>
+
+<?php echo $__env->make('components.videos.browse.collection', array('type'=> $type) , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

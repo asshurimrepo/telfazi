@@ -1,0 +1,29 @@
+<?php if( count( $videos ) > 0 ): ?>
+		<div class="row vidlist" id="likedVideos">
+		<?php foreach( $videos as $i=>$v ): ?>
+			<div id="video_<?php echo $v->id; ?>" class="videoitem">
+			
+			<?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v, 'enable_dislike' => true ), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			
+			</div>
+		<?php endforeach; ?>
+		</div>
+<?php else: ?>
+	<div class="alert alert-warning">
+		<b><i class="glyphicon glyphicon-warning-sign"></i> 
+		No Videos found</b>
+	</div>
+<?php endif; ?>
+<script type="text/javascript">
+	$('.btn-dislike').click(function(e){
+		e.preventDefault();
+		var video_id = this.id; 
+
+		
+		$.post('<?php echo URL::to('likes'); ?>',{ status:'unlike', video_id: video_id }, function( data ){
+			$('#video_'+video_id).fadeOut( <?php echo $trans_dura; ?> , function() {
+		        $(this).remove();
+		    });	
+		});
+	});
+</script>

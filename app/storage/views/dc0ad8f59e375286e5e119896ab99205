@@ -1,0 +1,36 @@
+<div class="col-md-2 col-sm-4 col-xs-6 listitem" style="padding: 2px;" id="video_item_1451">
+  <a href="<?php echo URL::to('channel/'.$c->id); ?>" class="featvid darken">
+    <div class="fsmall" style="background: url(<?php echo $c->getThumbnail(); ?>) no-repeat center; background-size:cover; background-color:black">
+
+      <img src="<?php echo asset('assets/img/vidspaces.png'); ?> " class="img-responsive">
+  
+    </div>
+  </a>
+  <div class="vid-bottombar">
+    <h5 class="title">
+    	<b><a href="<?php echo URL::to('user/'.$c->user->username); ?>"><?php echo $c->channelName(); ?></a></b></h5>
+
+  		<?php if(Auth::check() &&  Auth::user()->id != $c->user->id): ?>
+        <?php if(isset( $enable_unsubscribe ) && $enable_unsubscribe): ?>
+          <?php if($isViewing == false): ?>
+            <form action="<?php echo URL::to('mytv/subscriptions'); ?>" method="post">
+                <input type="hidden" name="subscription" value="<?php echo $s->id; ?>"> 
+                <button type="submit" title="" class="btn btn-dark btn-xs" id="">
+                <b>unsubscribe</b> 
+              </button>
+              </form>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if(isset( $enable_subscription ) && $enable_subscription): ?>
+          <div class="subscribe" id="<?php echo $c->channel_id; ?>">
+
+            <?php echo $__env->make('channel.lists.subscribe', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            
+          </div>
+        <?php endif; ?>
+      <?php endif; ?>
+    	
+    </a>
+  </div>
+</div>

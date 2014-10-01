@@ -1,0 +1,29 @@
+<?php if(count($videos) > 0): ?>
+    <?php foreach($videos as $v): ?>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title"><b>New Video</b></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row recommended" style="padding:20px">
+
+                    <?php echo $__env->make('layouts.home.carousel.vidsmall', [
+                        'v' => $v,
+                        'disable_caption' => true,
+                        'columnClass' => 'col-md-3'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                    <div class="col-md-9">
+                        <?php if($v): ?>
+                            <?php echo $__env->make('video.detail.editform', array('video' => $v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+
+<?php endif; ?>

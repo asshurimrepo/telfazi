@@ -1,0 +1,34 @@
+<?php
+$ddclass = '';
+if( isset( $dropdown_class ) && $dropdown_class )
+	$ddclass = $dropdown_class;
+?>
+
+
+<div class="btn-group">
+	<button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-toggle="dropdown">
+		<?php echo ucfirst($filter); ?> <span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu dd-dark <?php echo $ddclass; ?>" role="menu">
+
+    <?php if( isset($type) && $type == 'videos' ): ?>
+        <?php /*
+        <?php if( isset($is_category) && $is_category == true ): ?>
+                    <li><a href="<?php echo url( $url ); ?>">All Videos</a></li>
+                <?php else: ?>
+                    <li><a href="<?php echo url($target); ?>">All Videos</a></li>
+                <?php endif; ?>
+        */ ?>
+        <li><a href="<?php echo url($target); ?>">All Videos</a></li>
+
+
+    <?php elseif( isset($type) && $type == 'channels' ): ?>
+        <li><a href="<?php echo url('channels'); ?>">All Channels</a></li>
+    <?php endif; ?>
+
+	<li class="divider"></li>
+
+		<?php echo $__env->make('layouts.home.categorydropdown', array('url'=> isset($url) ? $url : 'channels'  ), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</ul>
+</div>

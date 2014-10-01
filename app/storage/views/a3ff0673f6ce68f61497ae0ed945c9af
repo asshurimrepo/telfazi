@@ -1,0 +1,29 @@
+<?php
+$subscribers = $c->subscribers()->where('subscribed', 1)->count();
+if(Auth::check()){
+	
+	$sub = $c->subscribeBy(Auth::user()->id);
+}
+?>
+
+<?php echo $__env->make('scripts.fblogin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<span class="views">
+	<a href="#" class="btn btn-dark btn-xs n_subscribe" id="<?php echo $c->channel_id; ?>" 
+		data-toggle="modal" data-target="#loginModal">
+		<i class="fa fa-caret-square-o-right"></i> &nbsp;
+		<?php if( isset($sub) && $sub): ?>
+			<?php if($sub->subscribed): ?>
+				unsubscribe
+			<?php else: ?>
+				subscribe
+			<?php endif; ?>
+		<?php else: ?>
+			subscribe
+  		<?php endif; ?>
+	</a>
+	<div class="label label-default no_subs">
+		<span><?php echo $subscribers; ?></span>
+	</div> 
+</span>
+<?php echo $__env->make('layouts.others.loginmodal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

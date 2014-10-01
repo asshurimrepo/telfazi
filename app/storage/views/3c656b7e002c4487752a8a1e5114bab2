@@ -1,0 +1,47 @@
+<?php if( count( $playlist ) > 0 ): ?>
+	<table class="table table-striped" id="vidtable">
+		<tbody>
+			<?php foreach( $playlist as $p ): ?>	
+				<tr>
+					<td>
+						<div class="vidThumb">
+							<div style="background: url(<?php echo $p->video->getThumbnail(); ?>) no-repeat center; 
+								background-size:cover;">
+								<a href="<?php echo URL::to('watch/'.$p->video->id); ?>">
+								  <img src="<?php echo asset('assets/img/whitespace.png'); ?>" class="hover playarrow-ver ">
+								</a>
+							</div>
+						</div>
+					</td>
+					<td>
+						<span class="burb-sm">
+							<a href="<?php echo URL::to('watch/'.$p->video->id); ?>">
+				        		<?php echo $p->video->title; ?>
+
+				        	</a>
+				    	</span>
+						<div class="description"><?php echo $p->video->description; ?></div>
+					</td>
+					<td><div class="burb-sm"><?php echo $p->user->firstname .' ' . $p->user->lastname; ?></div></td>
+					<td><div class="burb-sm"><?php echo $p->video->video_duration ? $p->video->video_duration : '00:00';; ?></div></td>
+					
+					<?php if($isViewing == false): ?>
+					<td>
+						<form action="<?php echo URL::to('mytv/play'); ?>" method="post">
+						<div class="btn-group pull-right">
+							<input type="hidden" name="remove" value="<?php echo $p->id; ?>">
+							<input type="hidden" name="video_id" value="<?php echo $p->video->id; ?>">
+						  	<button type="submit" title="" class="btn btn-default tips btn-sm btn-dislike" data-original-title="Dislike">
+								<span class="glyphicon glyphicon-trash"></span> <b id="n_dislikes">Remove</b> 
+							</button>
+						</div>
+						</form>
+					</td>
+					<?php endif; ?>
+				</tr>
+			<?php endforeach; ?> 
+		</tbody>
+	</table>
+<?php else: ?>
+	<div class="alert alert-warning"><b> <i class="glyphicon glyphicon-warning-sign"></i> No Videos found </b></div>
+<?php endif; ?>

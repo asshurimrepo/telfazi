@@ -1,0 +1,62 @@
+<?php $__env->startSection('head'); ?>
+<style type="text/css">
+body, a { color: #fff !important; }
+.feeder-header b { color: #fff; }
+.squad .container{ background: none !important; }
+.squad .container{ background: none !important; }
+.container-fluid { background: none !important; }
+
+.browselist {  font-size: 16px; }
+.browselist li a { color: #333; }
+.browselist li a:hover { text-decoration: none; }
+.browselist li .active { font-weight: bold; background: #012237; padding: 8px 20px; }
+</style>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<?php if($video): ?>
+<div style="max-width: 1260px; margin: 0 auto;">
+
+    <?php
+    $activeAt = array('','','');
+    $stack = array('browse', 'browse/popular', 'browse/newest');
+    $key = array_search( Request::path(), $stack);
+    $activeAt[$key] = 'active';?>
+
+    <?php echo $__env->make('components.socials.socials_vertical', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+
+    <?php if( isset($enable_featuring) && $enable_featuring == false ): ?>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <span class="feeder-header" style="text-transform: capitalize;"><b>
+                        <?php echo $heading; ?>
+
+                    </b></span>
+                </div>
+            </div>
+        <?php else: ?>
+            <?php echo $__env->make('video.browse_feature', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <div class="separator-space"></div>
+
+        <?php endif; ?>
+
+        <div class="separator-space-sm"></div>
+
+        <?php /* Get the video browse partial page */ ?>
+        <div class="parial-loader" data-url="<?php echo route('browse_videos', [ $slug , $category_id ]); ?>" data-partial="data-partial"></div>
+</div>
+<?php else: ?>
+    <div style="min-height: 200px">
+        <?php echo $__env->make('components.alerts.alert_message', ['type'=>'error', 'message' => 'Sorry, no videos found.'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

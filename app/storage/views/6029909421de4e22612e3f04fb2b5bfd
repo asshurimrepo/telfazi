@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	var public_url = "<?php echo $str = str_replace('\\', '/', public_path());; ?>";
+	var base_url = "<?php echo url(); ?>";
+	var stream_url = "<?php echo asset('assets/streamers/'); ?>";
+
+</script>
+
+
+
+          

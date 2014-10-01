@@ -1,0 +1,78 @@
+
+
+<?php $__env->startSection('content'); ?>
+
+
+<div class="widget-box">
+    <div class="separator-space-sm">
+        <a class="btn btn-primary btn-sm" href="<?php echo URL::to('upload/'.$channelID); ?>">
+            <b>Upload Video</b>
+        </a>
+    </div>
+
+    <?php /*Post form*/ ?>
+        <?php echo $__env->make('components.feeds.feed_post_form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php /*Post form*/ ?>
+
+<?php if($feed_total > 0 ): ?>
+        <?php /*Feeds*/ ?>
+        <div id="feedcon">
+            <?php echo $__env->make('user.feed.feed', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <?php /*Feeds*/ ?>
+
+        <div class="separator-space"></div>
+            <?php echo $__env->make('components.feeds.feed_load_btn', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="separator-space"></div>
+
+    </div> <?php /*End of widget*/ ?>
+<?php else: ?>
+    <div class="separator-space"></div>
+    <div class="alert alert-danger" role="alert">Welcome! there are no new feeds found.</div>
+<?php endif; ?>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $('.feedmore').click(function(){
+        var page = this.id;
+
+        $.ajax({
+          url: "<?php echo url('mytv'); ?>",
+          type: "POST",
+          data: { 
+            feed_more: true, 
+            user_id: "<?php echo Crypt::encrypt($user->id); ?>", 
+            page: page, 
+            is_viewing: '<?php echo $isViewing; ?>', 
+            take:  '<?php echo $take; ?>'
+          },
+          success: function( html ){
+            var npage = parseInt(page) + 1;
+
+            console.log(html);
+
+            if(html){
+              $('#feedcon').append(html);
+              $('.feedmore').attr('id', npage);
+            }else{
+              $('#feedcon').append('<div class="alert alert-warning">'+
+                '<b> <i class="glyphicon glyphicon-warning-sign"></i> No activity feeds available </b> '+
+            '</div>');
+              $('.loadbox').html('');
+            }    
+          }
+        });
+    });
+  });
+</script>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alphaprofile', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,119 @@
+<div class="feed-name">
+	<a href="<?php echo URL::to('user/'.$username); ?>">
+		<b>
+		
+		<?php if($feed->user->id == Auth::user()->id): ?>
+			<?php echo $isViewing ? $feed->uname() : 'You'; ?>
+
+		<?php else: ?> 
+			<?php echo $feed->uname(); ?>
+
+		<?php endif; ?>	
+		
+		</b>
+	</a>
+</div> 
+<div class="feed-content">
+<?php if($feed->type->type_name == 'Playlist'): ?>
+	<?php
+	$playlist = VideoPlaylist::find($feed->activity_id);
+
+	if($playlist && $playlist->video){
+		$video 			= $playlist->video;
+
+		$plist 			= $playlist->playlist;
+
+		?>
+		
+			<span>
+				have added  <a href="<?php echo URL::to('watch/'.$video->id); ?>"><?php echo $video->title; ?></a> to <a href="<?php echo URL::to('mytv/play/'.$plist->id); ?>"><?php echo $plist->playlist_name; ?></a> 
+			</span>
+			<span class="date"><?php echo date('F d Y h:i a', strtotime( $feed->created_at )); ?></span>
+			
+		<?php
+	}?>
+<?php endif; ?>
+
+<?php if($feed->type->type_name == 'Like'): ?>
+	<?php $like = VideoLike::find($feed->activity_id) ?>
+	
+	<?php if( $like && $like->video): ?>
+		<?php $video = $like->video; ?>
+		have just liked <a href="<?php echo URL::to('watch/'.$video->id); ?>"><?php echo $video->title; ?></a>
+				
+		<span class="date"><?php echo date('F d Y h:i a', strtotime( $feed->created_at )); ?></span>
+	<?php endif; ?>
+<?php endif; ?>
+
+<?php if($feed->type->type_name == 'Video'): ?>
+	<?php $video = Video::find($feed->activity_id); ?>
+
+	<?php if($video): ?>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="note">posted a new video</div> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-xs-6 entity">
+				<div class="vidThumb">
+					<div style="background: url(<?php echo $video->getThumbnail(); ?>) no-repeat center; 
+						background-size:cover;">
+						<a href="<?php echo URL::to('watch/'.$video->id); ?>">
+						  <img src="<?php echo asset('assets/img/whitespace.png'); ?>" 
+						  class="hover playarrow-ver">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9 col-xs-6" style="margin:0; padding:0;">
+				<div class="vidThumb ">
+					<span class="burb"><?php echo $video->title; ?></span>
+					<span class="date"><?php echo date('F d Y h:i a', strtotime($video->created_at) ); ?></span>
+					<span class="views"><em><?php echo $video->views()->count(); ?></em> views</span>
+					<span class="description"> <?php echo $video->getDescription(); ?></span>
+				</div>
+
+			</div>
+		</div>
+	<?php endif; ?>
+<?php endif; ?>
+
+
+<?php if($feed->type->type_name == 'Post'): ?>
+	<?php $post = Post::find($feed->activity_id); ?>
+
+	<?php if($post): ?>
+		<span><?php echo $post->content; ?></span>
+
+		<span class="date"><?php echo date('F d Y h:i a', strtotime( $feed->created_at )); ?></span>
+	<?php endif; ?>
+<?php endif; ?>
+
+
+
+<?php if($feed->type->type_name == 'Subscribe'): ?>
+	<?php $subscribe = ChannelSubscribe::find($feed->activity_id);
+	if($feed->content){
+		$content = json_decode($feed->content);
+
+		$sub = $content->subscribed;
+	}
+
+	?>
+
+	<?php if($subscribe && isset($subo)): ?>
+		<?php if($subscribe->userChannel): ?>
+
+		<?php endif; ?>
+		<?php echo $sub ? 'subscribed' : 'unsubscribed'; ?> to 
+		<a href="<?php echo URL::to('channel/'.$subscribe->channel_id); ?>">
+		<?php if($subscribe->userChannel): ?>
+			<?php echo $subscribe->userChannel->channelName(); ?> Channel
+		<?php endif; ?>
+		</a>
+
+		<span class="date"><?php echo date('F d Y h:i a', strtotime( $feed->created_at )); ?></span>
+	<?php endif; ?>
+<?php endif; ?>
+</div>

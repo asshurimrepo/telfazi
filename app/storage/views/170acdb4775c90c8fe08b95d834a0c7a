@@ -1,0 +1,37 @@
+<?php $__env->startSection('content'); ?>
+	<div class="row">
+		<div class="col-md-6"> 
+			<div class="pull-left mytitle">
+				<?php echo $channel->channelName(); ?> Channel
+
+				<?php if(Auth::check()): ?>
+					<?php if($channel->user->id == Auth::user()->id): ?>
+						<a href="<?php echo URL::to('mytv/channels/edit/'.$channel->channel_id); ?>" class="btn btn-primary btn-xs">edit</a>
+					<?php endif; ?>
+				<?php endif; ?>
+				
+			</div>
+		</div>
+
+		<div class="col-md-6"> 
+			<div class="pull-right mytitle">
+				Channel Category
+			</div>
+		</div>
+		
+	</div>
+	<div class="separator-space-xsm"></div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="separator-space-sm"></div>
+
+			<?php echo $__env->make('layouts.frag.feeder_browsing', array('videos'=>$videos), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+			
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.alpha', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

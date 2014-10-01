@@ -1,0 +1,77 @@
+<div class="header" style="background: url(<?php echo asset('assets/img/header-strip.jpg'); ?>); ">
+<?php
+
+  $activeAt = array('','','','','', '');
+  $stack = array('','videos/mostviewed', 'videos/popular', 'category', 'live', '/');
+  $key = array_search( Request::path(), $stack);
+  
+  $activeAt[$key] = 'active';
+
+?>
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-12 " >
+        <div class="logo-img pull-left"><a href="<?php echo URL::to(''); ?>">
+          <?php if(Session::get('lang') == 'ar'): ?>
+            <img src="<?php echo asset('assets/img/logo-ar.png'); ?>" width="180"></a>
+          <?php else: ?> 
+            <img src="<?php echo asset('assets/img/logoblue.png'); ?>" width="180"></a>
+          <?php endif; ?>
+          <span class="shout">Your home of latest videos</span>
+        </div>
+
+        <div class="pull-right">
+          <div class="separator-space-sm"></div>
+          <div class="row">
+            <div class="col-md-5 col-md-offset-7 col-sm-12">
+              <div>
+          
+              </div>
+            </div>
+          </div>
+
+          <div class="row hidden-xs">
+            <div class="separator-space-xsm"></div>
+
+<ul class="list-unstyled list-inline header-menu">
+<li><a href="<?php echo url('mustwatch'); ?>" class="feat btn btn-block <?php echo $activeAt[5]; ?>"><?php echo Lang::get('lang.featured'); ?></a> </li>
+<li class="dropdown" style="list-style:none;">
+
+    <a href="#" class="dropdown-toggle btn btn-block feat" data-toggle="dropdown"><?php echo Lang::get('lang.categories'); ?> <b class="caret"></b></a>
+    <ul class="dropdown-menu list-unstyled">
+        <?php echo $__env->make('layouts.home.categorydropdown', ['slug' => 'category'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </ul>
+
+</li>
+  <li><a href="<?php echo url('live'); ?>" class="btn btn-block feat <?php echo $activeAt[4]; ?>"><?php echo Lang::get('lang.watch_live'); ?></a></li>
+</ul>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row visible-xs">
+    <div class="separator-space-xsm"></div>
+    <div class="header-menu">
+      <a href="<?php echo url('mustwatch'); ?>" class="feat btn btn-block <?php echo $activeAt[0]; ?>"><?php echo Lang::get('lang.featured'); ?></a>
+      <li class="dropdown" >
+
+        <a href="#" class="dropdown-toggle btn btn-block feat" data-toggle="dropdown"><?php echo Lang::get('lang.categories'); ?> <b class="caret"></b></a>
+        <ul class="dropdown-menu list-unstyled list-inline text-center">
+            <li>
+                <?php echo $__env->make('layouts.home.categorydropdown', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </li>
+        </ul>
+
+      </li>
+
+      <a href="<?php echo url('live'); ?>" class="btn btn-block <?php echo $activeAt[4]; ?> feat"><?php echo Lang::get('lang.watch_live'); ?></a>
+    </div>
+  </div>  
+</div>

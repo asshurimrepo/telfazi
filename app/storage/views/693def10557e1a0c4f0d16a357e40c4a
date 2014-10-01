@@ -1,0 +1,72 @@
+
+<div class="row recommended">
+  <div id="categories">
+    <?php if(count($channels)>0): ?>
+
+
+      <?php foreach( $channels as $c ): ?>
+ 
+        <div class="col-md-3 col-xs-12 col-sm-6 entity">
+          <figure>
+            <div class="vidThumb ">
+                <div style="background: url(<?php echo $c->getThumbnail(); ?>) no-repeat center; 
+                background-size:cover;">
+                    <a href="<?php echo URL::to('channel/'.$c->id); ?>">
+                        <img src="<?php echo asset('assets/img/channel_cover.png'); ?>">
+                    </a>
+                </div>
+            </div>
+            <!-- <a href="<?php echo URL::to('channel/'.$c->id); ?>" title="<?php echo $c->channelName(); ?>">
+              <img src="<?php echo asset('assets/img/thumb3.jpg'); ?>" width="100%">
+            </a> -->
+            <div class="meta text-left">
+              <span class="head">
+                <a href="<?php echo URL::to('channel/'.$c->id); ?>" class="inline">&nbsp; <?php echo $c->channelName(); ?></a> 
+              </span>
+              
+              <div class="separator-space-xsm"></div>
+              <div class="subscribe" id="<?php echo $c->channel_id; ?>">
+
+                <?php echo $__env->make('channel.lists.subscribe', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                
+              </div>
+            </div>
+          </figure>
+        </div> 
+      <?php endforeach; ?>
+
+    <?php else: ?>
+    <div style="margin: 70px 0 70px 0; "></div> 
+      <div class="alert alert-danger" role="alert">
+        <b>Sorry! No channels found. </b>
+      </div>
+     <div style="margin: 70px 0 70px 0; "></div>  
+    <?php endif; ?>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+$('.n_subscribe').click(function(e){
+    e.preventDefault();
+    var subscribeTo = this.id;
+
+    $.ajax({
+      url: "<?php echo URL::to('channel/subsTo'); ?>",
+      type: 'post',
+      data: { subscribeTo: subscribeTo}
+    }).done(function( data ){
+      
+      console.log(data);
+
+
+      var url = '<?php echo URL::to("channel/'+data.subscribeTo+'/subscribe"); ?>';
+
+      $('.subscribe#'+data.subscribeTo).load(url);
+
+    });
+});
+  
+</script>

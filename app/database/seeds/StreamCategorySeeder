@@ -1,0 +1,61 @@
+<?php
+
+class StreamCategorySeeder extends Seeder{
+	public function run(){
+		DB::table('streamcategories')->delete();
+		$data = array(
+			array(
+				'title' => 'Arabic Channels',
+				'slug' => 'arabic_channels', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Music',
+				'slug' => 'music', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Religious',
+				'slug' => 'religious', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Iranian',
+				'slug' => 'iranian', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Kurd',
+				'slug' => 'kurd', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'News',
+				'slug' => 'news', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Sports',
+				'slug' => 'sports', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Radio',
+				'slug' => 'radio', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Children',
+				'slug' => 'children', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+			array(
+				'title' => 'Ramadan 2014',
+				'slug' => 'ramadan_2014', 
+				'created_at' => date('Y-m-d H:i:s'), 
+				'updated_at' => date('Y-m-d H:i:s')),
+		);
+
+		DB::table('streamcategories')->insert($data);
+	}
+}

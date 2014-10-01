@@ -1,0 +1,40 @@
+<?php $__env->startSection('content'); ?>
+		
+<div class="row vidlist">
+	<?php if( count( $playlist ) > 0 ): ?>
+		<?php foreach( $playlist as $p ): ?>
+		<?php $v = $p->video; ?>	
+		
+			<?php if($v): ?>
+				<?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v, 'enable_remove' => true), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<?php endif; ?>
+
+		<?php endforeach; ?>
+	<?php endif; ?>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.btn-video-playlist-remove').click(function(e){
+		e.preventDefault();
+		var split = this.id.split('_');
+		var playlist_id = $(this).attr('playlist');
+		var video_id = split[1];
+
+		$.ajax({
+			url: "<?php echo url('mytv/play'); ?>",
+			type:"POST",
+			data: { remove : playlist_id, video_id: video_id },
+			success: function( data ){
+				$('#video_item_'+video_id).fadeOut( <?php echo $trans_dura; ?> , function() {
+				    $(this).remove();
+			    });	
+			}
+		});
+	});
+});
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.alphaprofile', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

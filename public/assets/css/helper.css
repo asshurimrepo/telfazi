@@ -1,0 +1,21 @@
+ /*Separators*/
+.line-separator{ height:2px; background:#bbbbbb; border-bottom:1px solid #bbbbbb; margin:15px 0 15px 0; }
+.separator-line { height:1px; background:#CFCCCC; border-bottom:1px solid #CFCCCC;  margin: 20px 0 20px 0; }
+.separator-line-black { height:1px; background:#000; border-bottom:1px solid #CFCCCC;  margin: 20px 0 20px 0; }
+.separator-space { margin-bottom: 40px; }
+.separator-space-sm { margin-bottom: 15px; }
+.separator-space-xsm { margin-bottom: 5px; }
+.separator-downarrow {  height:2px; background:#CFCCCC;   margin: 10px 0 10px 0; text-align: center }
+.separator-downarrow img { margin: 0; padding: 0; position: relative; top: -5px; }
+.separator-vertival-line { width: 1px; height:5px; color:#fff;}
+/*Separators*/
+
+/*Texts*/
+.text-lightg { color: #a8a8a8; }
+/*Texts*/
+
+
+.vertical-middle { vertical-align: middle }
+.vertical-bottom { vertical-align: bottom }
+.vertical-top { vertical-align: top }
+

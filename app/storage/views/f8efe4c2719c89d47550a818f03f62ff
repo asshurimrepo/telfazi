@@ -1,0 +1,62 @@
+
+<?php if( count($videos) > 0 ): ?>
+
+<div class="nopadd">
+	<h2 class="featTitle"> <a href="<?php echo $catUrl; ?>"><?php echo $title; ?></a> </h2>
+</div>
+
+
+<div id="<?php echo $carousel_name; ?>" class="carousel slide feeder-carousel" data-ride="carousel" data-interval="false">
+  <div class="carousel-inner nopadd">
+
+
+
+<?php $max = 12; ?>
+<?php if( $videos->count() > 0): ?>
+  <?php foreach( $videos as $i=>$v ): ?>
+    <?php if($i%$max == 0): ?>
+    <div class="item <?php echo $i == 0 ? 'active' : ''; ?> ">
+      <div class="boxy">
+        <div class="row vidlist">
+    <?php endif; ?>
+
+
+    <?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <?php if($i%$max == $max-1 || ($i+1 == $videos->count())): ?>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>  
+
+  <?php endforeach; ?>
+<?php endif; ?>
+
+<!-- <div class="item active">
+
+<div class="boxy">
+	<div class="row vidlist">
+	<?php foreach( $videos as $v ): ?>
+		
+			<?php echo $__env->make('layouts.home.carousel.vidsmall', array('v' => $v), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		
+	<?php endforeach; ?>
+	</div>
+</div> 
+
+
+</div> --> <!-- end item -->
+
+
+                 
+  </div><!-- end carousel inner -->
+  <!-- Controls -->
+  <a class="left carousel-control" href="#<?php echo $carousel_name; ?>" role="button" data-slide="prev">
+  <span class="left-control"> <i class="fa fa-angle-left"></i> </span>
+  </a>
+  <a class="right carousel-control" href="#<?php echo $carousel_name; ?>" role="button" data-slide="next">
+  <span class="right-control"> <i class="fa fa-angle-right"></i>  </span>
+  </a>
+</div>
+<?php endif; ?>

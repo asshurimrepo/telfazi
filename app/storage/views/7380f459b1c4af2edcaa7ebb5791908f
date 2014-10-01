@@ -1,0 +1,13 @@
+<?php if(Session::has('error')): ?>
+<div class="alert alert-danger session-alert">
+	<span class="glyphicon glyphicon-warning-sign"></span><span> <b><?php echo Session::get('error'); ?></b></span>
+</div>
+<?php endif; ?>
+
+<?php if(Session::has('success')): ?>
+<div class="alert alert-danger session-alert">
+	<span class="glyphicon glyphicon-warning-sign"></span><span> <b><?php echo Session::get('success'); ?></b></span>
+</div>
+<?php endif; ?>
+
+<?php echo $__env->make('errors.validate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
